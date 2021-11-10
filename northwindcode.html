@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+      <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <h1> The Progress of NSW Rest Areas Group Project</h1>
+
+
+  <p>The code for neo4j project will be from Northwind Group Project on Github website</p>
+
+      <pre>
+      LOAD CSV WITH HEADERS FROM 'file:///restarea.csv' AS row
+      MERGE (ra:restarea {RestAreaID: row.RestAreaID})
+      ON CREATE SET ra.Suburb = row.Suburb,
+      ra.Category = row.Category,
+      ra.RestAreaName=row.RestAreaName,
+      ra.ResponsibleAuthority=row.ResponsibleAuthority,
+      ra.VehicleType=row.VehicleType;
+      </pre>
+
+<script src="app.js"> </script>
+
+  </body>
+</html>
